@@ -37,6 +37,7 @@ export class Login extends Component {
         })
         .catch((er) => {
           NotificationManager.error(er.message);
+          this.setState({ loading: false });
         });
     });
   };
@@ -65,8 +66,8 @@ export class Login extends Component {
               backdropFilter: `blur(10px)`,
               background: `rgba(255,255,255,.7)`,
               borderRadius: `1rem`,
-              width: `40vw`,
-              height: `60vh`,
+              minWidth: `40vw`,
+              minHeight: `60vh`,
               border: `none`,
               overflow: `hidden`,
             }}
@@ -115,6 +116,9 @@ export class Login extends Component {
                 </div>
                 <div className="form-group text-center p-1">
                   <Link to="/register">Don't have an account?</Link>
+                </div>
+                <div className="form-group text-center p-1">
+                  <Link to="/forgotpassword">Forgot your password?</Link>
                 </div>
               </form>
             </div>

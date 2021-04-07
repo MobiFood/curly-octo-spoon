@@ -2,7 +2,7 @@
   "name": "MobiFood",
   "theme_color": "#ef962d",
   "background_color": "#faf4f4",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "scope": "/",
   "start_url": "/"
 }

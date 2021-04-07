@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Kiwi Maru';
+    src: local('Kiwi Maru Light'), local('KiwiMaru-Light'),
+        url('KiwiMaru-Light.woff2') format('woff2'),
+        url('KiwiMaru-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kiwi Maru';
+    src: local('Kiwi Maru Medium'), local('KiwiMaru-Medium'),
+        url('KiwiMaru-Medium.woff2') format('woff2'),
+        url('KiwiMaru-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kiwi Maru';
+    src: local('Kiwi Maru Regular'), local('KiwiMaru-Regular'),
+        url('KiwiMaru-Regular.woff2') format('woff2'),
+        url('KiwiMaru-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

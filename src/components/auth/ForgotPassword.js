@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoginImage from "@assets/images/Login.webp";
+import ForgotPasswordImage from "@assets/images/ForgotPassword.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { NotificationManager } from "react-notifications";
@@ -35,6 +35,7 @@ export class ForgotPassword extends Component {
         })
         .catch((er) => {
           NotificationManager.error(er.message);
+          this.setState({ loading: false });
         });
     });
   };
@@ -51,7 +52,7 @@ export class ForgotPassword extends Component {
               position: "absolute",
               zIndex: 0,
               height: "100vh",
-              background: `url(${LoginImage})`,
+              background: `url(${ForgotPasswordImage})`,
               backgroundColor: `#000000ff`,
               backgroundSize: `cover`,
               //   opacity: `.8`,
@@ -63,8 +64,8 @@ export class ForgotPassword extends Component {
               backdropFilter: `blur(10px)`,
               background: `rgba(255,255,255,.7)`,
               borderRadius: `1rem`,
-              width: `40vw`,
-              height: `50vh`,
+              minWidth: `40vw`,
+              minHeight: `50vh`,
               border: `none`,
               overflow: `hidden`,
             }}
@@ -99,10 +100,13 @@ export class ForgotPassword extends Component {
                 </div>
 
                 <div className="form-group text-center pt-3">
-                  <button className="btn btn-success">Login</button>
+                  <button className="btn btn-success">Send</button>
                 </div>
                 <div className="form-group text-center p-1">
                   <Link to="/register">Don't have an account?</Link>
+                </div>
+                <div className="form-group text-center p-1">
+                  <Link to="/register">Already have an account?</Link>
                 </div>
               </form>
             </div>

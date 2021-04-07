@@ -24,10 +24,12 @@ export class Register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({ loading: true }, () => {
-      NotificationManager.info("Creating your account");
+      NotificationManager.info("Creating your account", "Please wait...");
       auth
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(async ({ user }) => {})
+        .then(({ user }) => {
+          NotificationManager.success("Account created", "Yaay!");
+        })
         .catch((er) => {
           NotificationManager.error(er.message);
           this.setState({ loading: false });
@@ -61,8 +63,8 @@ export class Register extends Component {
               backdropFilter: `blur(10px)`,
               background: `rgba(255,255,255,.7)`,
               borderRadius: `1rem`,
-              width: `40vw`,
-              height: `60vh`,
+              minWidth: `40vw`,
+              minHeight: `60vh`,
               border: `none`,
               overflow: `auto`,
             }}

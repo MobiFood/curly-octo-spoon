@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "react-notifications/lib/notifications.css";
+import "@assets/fonts/stylesheet.css";
 import "@assets/styles/index.scss";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
