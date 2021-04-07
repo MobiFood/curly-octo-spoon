@@ -7,19 +7,19 @@ import "@assets/styles/index.scss";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "@redux/store";
 import { NotificationContainer } from "react-notifications";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router>
       <Provider store={store}>
         <Route component={App} />
         <NotificationContainer />
       </Provider>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById("app")
 );
