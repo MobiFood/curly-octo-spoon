@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/curly-octo-spoon/static/css/main.3d330628.chunk.css",
-    "main.js": "/curly-octo-spoon/static/js/main.781aded5.chunk.js",
+    "main.js": "/curly-octo-spoon/static/js/main.0cb82091.chunk.js",
     "runtime-main.js": "/curly-octo-spoon/static/js/runtime-main.603c28d1.js",
     "static/css/2.a76e4ede.chunk.css": "/curly-octo-spoon/static/css/2.a76e4ede.chunk.css",
     "static/js/2.250b037a.chunk.js": "/curly-octo-spoon/static/js/2.250b037a.chunk.js",
@@ -21,6 +21,6 @@
     "static/css/2.a76e4ede.chunk.css",
     "static/js/2.250b037a.chunk.js",
     "static/css/main.3d330628.chunk.css",
-    "static/js/main.781aded5.chunk.js"
+    "static/js/main.0cb82091.chunk.js"
   ]
 }
