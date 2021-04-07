@@ -8,6 +8,8 @@ import ForgotPassword from "@components/auth/ForgotPassword";
 import { auth } from "@config/firebaseconfig";
 import Home from "@components/core/Home";
 import Header from "@components/core/Header";
+import Cart from "@components/core/Cart";
+import Orders from "@components/core/Orders";
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +35,8 @@ export class App extends Component {
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/cart" exact component={Cart} />
+        <Route path="/orders" exact component={Orders} />
         <Redirect to="/" />
       </Switch>
     </div>

@@ -45,10 +45,10 @@ export class Header extends Component {
               <NavLink
                 exact
                 activeClassName="active"
-                to="/profile"
+                to="/orders"
                 className="nav-link"
               >
-                Profile
+                Orders
               </NavLink>
             </li>
             <li className="nav-item">
