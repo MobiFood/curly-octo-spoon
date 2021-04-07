@@ -2,13 +2,21 @@ import { auth } from "@config/firebaseconfig";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Logo from "@assets/images/m.png";
 
 export class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-light bg-white navbar-expand-lg shadow-sm">
-        <div className="navbar-brand">
-          <h1>MobiFood</h1>
+        <div
+          className="navbar-brand p-0 m-0"
+          style={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        >
+          {/* <h1>MobiFood</h1> */}
+          <img src={Logo} alt="MobiFood" className="img-responsive w-100" />
         </div>
         <button
           className="navbar-toggler"

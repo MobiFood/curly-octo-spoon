@@ -33,7 +33,7 @@ export class App extends Component {
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/" />
       </Switch>
     </div>
   );
