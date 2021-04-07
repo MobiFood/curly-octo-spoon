@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/curly-octo-spoon/static/css/main.3d330628.chunk.css",
+    "main.js": "/curly-octo-spoon/static/js/main.781aded5.chunk.js",
+    "runtime-main.js": "/curly-octo-spoon/static/js/runtime-main.603c28d1.js",
+    "static/css/2.a76e4ede.chunk.css": "/curly-octo-spoon/static/css/2.a76e4ede.chunk.css",
+    "static/js/2.250b037a.chunk.js": "/curly-octo-spoon/static/js/2.250b037a.chunk.js",
+    "static/js/3.163ce0fe.chunk.js": "/curly-octo-spoon/static/js/3.163ce0fe.chunk.js",
+    "index.html": "/curly-octo-spoon/index.html",
+    "service-worker.js": "/curly-octo-spoon/service-worker.js",
+    "static/js/2.250b037a.chunk.js.LICENSE.txt": "/curly-octo-spoon/static/js/2.250b037a.chunk.js.LICENSE.txt",
+    "static/media/ForgotPassword.21ab6a72.png": "/curly-octo-spoon/static/media/ForgotPassword.21ab6a72.png",
+    "static/media/stylesheet.css": "/curly-octo-spoon/static/media/KiwiMaru-Regular.fa3f1dce.woff2",
+    "static/media/Login.a6b8e44d.webp": "/curly-octo-spoon/static/media/Login.a6b8e44d.webp",
+    "static/media/Register.aef87fae.png": "/curly-octo-spoon/static/media/Register.aef87fae.png",
+    "static/media/m.3d7e34aa.png": "/curly-octo-spoon/static/media/m.3d7e34aa.png",
+    "static/media/notifications.css": "/curly-octo-spoon/static/media/notification.c5d9251e.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.603c28d1.js",
+    "static/css/2.a76e4ede.chunk.css",
+    "static/js/2.250b037a.chunk.js",
+    "static/css/main.3d330628.chunk.css",
+    "static/js/main.781aded5.chunk.js"
+  ]
+}
