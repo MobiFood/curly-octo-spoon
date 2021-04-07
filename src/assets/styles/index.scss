@@ -44,6 +44,11 @@ $theme-colors: (
   "danger": #ff0033,
 );
 
+::selection {
+  background-color: #ef962d;
+  color: #faf4f4;
+}
+
 $font-family-sans-serif: "Kiwi Maru",
   // Safari for macOS and iOS (San Francisco)
   -apple-system,
