@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Logo from "@assets/images/logo.png";
-
+import { Link } from "react-router-dom";
 export class Header extends Component {
   render() {
     return (
@@ -16,7 +16,9 @@ export class Header extends Component {
           }}
         >
           {/* <h1>MobiFood</h1> */}
-          <img src={Logo} alt="MobiFood" className="img-responsive w-100" />
+          <Link to="/">
+            <img src={Logo} alt="MobiFood" className="img-responsive w-100" />
+          </Link>
         </div>
         <button
           className="navbar-toggler"
@@ -30,43 +32,43 @@ export class Header extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="headerNav">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/"
-                className="nav-link"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/orders"
-                className="nav-link"
-              >
-                Orders
-              </NavLink>
-            </li>
+          <ul className="navbar-nav ml-auto align-items-center">
             <li className="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
                 to="/cart"
                 className="nav-link"
+                style={{
+                  fontSize: "2.4rem",
+                  marginRight: "1rem",
+                }}
               >
-                Cart
+                {/* Cart */}
+                <i className="fa fa-shopping-cart" aria-hidden="true"></i>
               </NavLink>
             </li>
-            <li
-              role="button"
-              className="nav-item"
-              onClick={() => auth.signOut()}
-            >
-              <div className="nav-link text-danger">Sign out</div>
+            <li className="dropdown nav-item">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl91qGLzsCnDK_EiGACYohJ0bSsxI_eDZQ8g&usqp=CAU"
+                alt="User profile"
+                className="img-responsive rounded-circle data-toggler shadow"
+                style={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+                data-toggle="dropdown"
+                role="button"
+              />
+              <div className="dropdown-menu dropdown-menu-right">
+                <div
+                  className="dropdown-item"
+                  role="button"
+                  onClick={() => auth.signOut()}
+                >
+                  Sign out
+                </div>
+              </div>
             </li>
           </ul>
         </div>

@@ -10,6 +10,7 @@ import Home from "@components/core/Home";
 import Header from "@components/core/Header";
 import Cart from "@components/core/Cart";
 import Orders from "@components/core/Orders";
+import SearchResults from "@components/core/SearchResults";
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -31,13 +32,18 @@ export class App extends Component {
   }
 
   authenticated = (
-    <div className="">
+    <div className="d-flex flex-column min-vh-100">
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/orders" exact component={Orders} />
-        <Redirect to="/" />
+        <Route
+          path="/search-results/:restaurant/:foodItem"
+          component={SearchResults}
+        />
+
+        {/* <Redirect to="/" /> */}
       </Switch>
     </div>
   );
