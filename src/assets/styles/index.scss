@@ -52,7 +52,8 @@ $theme-colors: (
   color: #faf4f4;
 }
 
-$font-family-sans-serif: "Kiwi Maru",
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+$font-family-sans-serif: "Open Sans",
   // Safari for macOS and iOS (San Francisco)
   -apple-system,
   // Chrome < 56 for macOS (San Francisco)
@@ -67,4 +68,4 @@ $font-family-sans-serif: "Kiwi Maru",
   // Emoji fonts
   "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol" !default;
-@import "bootstrap"; ;
+@import "bootstrap";

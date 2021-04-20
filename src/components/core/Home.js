@@ -5,6 +5,8 @@ import $ from "jquery";
 import { db } from "@config/firebaseconfig";
 import Loading from "@components/shared/Loading";
 import { NotificationManager } from "react-notifications";
+import { Route } from "react-router-dom";
+import Featured from "./Featured";
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,6 @@ export class Home extends Component {
     };
   }
   componentDidMount() {
-    // $("#dropdownContainerList").slideUp();
     db.collection("restaurants")
       .get()
       .then((querySnapshot) => {
@@ -27,7 +28,7 @@ export class Home extends Component {
           ...restaurant.menu.map((i) => i.itemName.toUpperCase()),
         ]);
         this.setState({
-          showDropdown: true,
+          showDropdown: false,
           restaurants: data,
           loading: false,
         });
@@ -36,7 +37,7 @@ export class Home extends Component {
   render() {
     if (this.state.loading) return <Loading />;
     return (
-      <div>
+      <div className="flex-grow-1 h-100">
         <div
           className="w-100"
           style={{
@@ -54,9 +55,10 @@ export class Home extends Component {
           }}
         />
 
-        <div className="container mt-2 flex-grow">
-          <div class="form-group">
+        <div className="h-100 d-flex flex-column justify-content-around bg-">
+          <div class="form-group w-75 mx-auto">
             <input
+              autofocus
               autoComplete="off"
               type="text"
               class="form-control"
@@ -82,7 +84,7 @@ export class Home extends Component {
             />
             <div
               id="dropdownContainerList"
-              className="list-group list-group-flushed"
+              className=""
               style={{
                 height: "20vh",
                 overflowY: "auto",
@@ -101,7 +103,7 @@ export class Home extends Component {
                         key={`${
                           (indexJ + 1) * (indexI + 1) + indexI
                         }-menu-item`}
-                        className="list-group-item dropdown-item"
+                        className="list-group- rounded-0 dropdown-item"
                         role="button"
                         onClick={() => {
                           this.props.history.push(
@@ -115,19 +117,13 @@ export class Home extends Component {
                   )}
             </div>
           </div>
-          <div className="bg-">
-            <div className="card text-white bg-primary h-100">
-              <img
-                className="card-img-top"
-                src="https://via.placeholder.com/150"
-                alt="FoodItem"
-                style={{ width: "" }}
-              />
-              <div className="card-body">
-                <h4 className="card-title">Paneer Makhanwala</h4>
-                <p className="card-text">Tasty</p>
-              </div>
-            </div>
+          <div
+            className="w-100 d-flex align-items-end mb-5 justify-content-around"
+            id="featuredFood"
+          >
+            <Route component={Featured} />
+            <Route component={Featured} />
+            <Route component={Featured} />
           </div>
         </div>
       </div>

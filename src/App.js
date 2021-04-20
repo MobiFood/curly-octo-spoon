@@ -32,19 +32,21 @@ export class App extends Component {
   }
 
   authenticated = (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column vh-100">
       <Header />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/cart" exact component={Cart} />
-        <Route path="/orders" exact component={Orders} />
-        <Route
-          path="/search-results/:restaurant/:foodItem"
-          component={SearchResults}
-        />
+      <div className="d-flex justify-content-center align-items-center flex-grow-1 h-100">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/orders" exact component={Orders} />
+          <Route
+            path="/search-results/:restaurant/:foodItem"
+            component={SearchResults}
+          />
 
-        {/* <Redirect to="/" /> */}
-      </Switch>
+          {/* <Redirect to="/" /> */}
+        </Switch>
+      </div>
     </div>
   );
 

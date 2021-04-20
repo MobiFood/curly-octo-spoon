@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export class Header extends Component {
   render() {
     return (
-      <nav className="navbar navbar-light bg- navbar-expand-lg shadow-sm">
+      <nav className="navbar navbar-light bg- navbar-expand-lg shadow-">
         <div
           className="navbar-brand p-0 m-0"
           style={{
@@ -52,7 +52,7 @@ export class Header extends Component {
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl91qGLzsCnDK_EiGACYohJ0bSsxI_eDZQ8g&usqp=CAU"
                 alt="User profile"
-                className="img-responsive rounded-circle data-toggler shadow"
+                className="img-responsive rounded-circle data-toggler"
                 style={{
                   width: "3rem",
                   height: "3rem",
