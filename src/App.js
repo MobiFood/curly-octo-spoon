@@ -1,16 +1,16 @@
-import Loading from "@components/shared/Loading";
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import Login from "@components/auth/Login";
-import Register from "@components/auth/Register";
-import { Redirect, Route, Switch } from "react-router";
-import ForgotPassword from "@components/auth/ForgotPassword";
-import { auth } from "@config/firebaseconfig";
-import Home from "@components/core/Home";
-import Header from "@components/core/Header";
-import Cart from "@components/core/Cart";
-import Orders from "@components/core/Orders";
-import SearchResults from "@components/core/SearchResults";
+import Loading from '@components/shared/Loading';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Login from '@components/auth/Login';
+import Register from '@components/auth/Register';
+import { Redirect, Route, Switch } from 'react-router';
+import ForgotPassword from '@components/auth/ForgotPassword';
+import { auth } from '@config/firebaseconfig';
+import Home from '@components/core/Home';
+import Header from '@components/core/Header';
+import Cart from '@components/core/Cart';
+import Orders from '@components/core/Orders';
+import SearchResults from '@components/core/SearchResults';
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(user => {
       if (user) {
         this.route = this.authenticated;
         this.setState({ loading: false });
@@ -32,19 +32,19 @@ export class App extends Component {
   }
 
   authenticated = (
-    <div className="d-flex flex-column vh-100">
+    <div className='d-flex flex-column vh-100'>
       <Header />
-      <div className="d-flex justify-content-center align-items-center flex-grow-1 h-100">
+      <div className='d-flex justify-content-center align-items-center flex-grow-1 h-100'>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/orders" exact component={Orders} />
+          <Route path='/' exact component={Home} />
+          <Route path='/cart' exact component={Cart} />
+          <Route path='/orders' exact component={Orders} />
           <Route
-            path="/search-results/:restaurant/:foodItem"
+            path='/search-results/:restaurant/:foodItem'
             component={SearchResults}
           />
 
-          {/* <Redirect to="/" /> */}
+          <Redirect to='/' />
         </Switch>
       </div>
     </div>
@@ -52,10 +52,10 @@ export class App extends Component {
 
   notAuthenticated = (
     <Switch>
-      <Route path="/login" exact component={Login} />
-      <Route path="/register" exact component={Register} />
-      <Route path="/forgotpassword" exact component={ForgotPassword} />
-      <Redirect to="/login" />
+      <Route path='/login' exact component={Login} />
+      <Route path='/register' exact component={Register} />
+      <Route path='/forgotpassword' exact component={ForgotPassword} />
+      <Redirect to='/login' />
     </Switch>
   );
 
@@ -65,7 +65,7 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {};
 
