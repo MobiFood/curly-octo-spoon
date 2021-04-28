@@ -94,29 +94,31 @@ export class Home extends Component {
                       ki.includes(this.state.query.toUpperCase())
                     )
                   )
-                  .map((j, indexJ) =>
-                    j.length === 0
-                      ? 'No items'
-                      : j.map((i, indexI) => (
-                          <div
-                            key={`${
-                              (indexJ + 1) * (indexI + 1) + indexI
-                            }-menu-item`}
-                            className='list-group-item rounded-0 dropdown-item bg-'
-                            role='button'
-                            onClick={() => {
-                              this.props.history.push(
-                                `/search-results/${j[0]}/${i}`
-                              );
-                            }}
-                          >
-                            <small className='text-muted'>
-                              {i === j[0] && 'Hotel    '}
-                            </small>
-                            <span className=''>{i}</span>
-                          </div>
-                        ))
-                  )}
+                  .map((j, indexJ) => {
+                    if (j.length === 0) {
+                      return <p></p>;
+                    } else {
+                      return j.map((i, indexI) => (
+                        <div
+                          key={`${
+                            (indexJ + 1) * (indexI + 1) + indexI
+                          }-menu-item`}
+                          className='list-group-item rounded-0 dropdown-item bg-'
+                          role='button'
+                          onClick={() => {
+                            this.props.history.push(
+                              `/search-results/${j[0]}/${i}`
+                            );
+                          }}
+                        >
+                          <small className='text-muted'>
+                            {i === j[0] && 'Hotel    '}
+                          </small>
+                          <span className=''>{i}</span>
+                        </div>
+                      ));
+                    }
+                  })}
               </div>
             )}
           </div>

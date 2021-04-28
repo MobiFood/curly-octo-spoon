@@ -4,6 +4,7 @@ import BackgroundImage from '@assets/images/home.webp';
 import Loading from '@components/shared/Loading';
 import { db } from '@config/firebaseconfig';
 import _ from 'lodash';
+import voca from 'voca';
 
 export class SearchResults extends Component {
   constructor(props) {
@@ -54,6 +55,7 @@ export class SearchResults extends Component {
         });
     }
   }
+
   render() {
     if (this.state.loading) return <Loading />;
     if (this.state.type === 'restaurant')
@@ -119,11 +121,12 @@ export class SearchResults extends Component {
           </div>
         </div>
       );
+    // food items
     else
       return (
-        <div className='container mt-2 flex-grow-1'>
+        <div className='container h-100'>
           <div
-            className='w-100'
+            className='w-100 d-none'
             style={{
               position: `absolute`,
               height: `100vh`,
@@ -137,20 +140,54 @@ export class SearchResults extends Component {
               filter: 'blur(10px)',
             }}
           />
-          <div className='row flex-row mx-auto' style={{ overflowX: 'hidden' }}>
-            {this.state.data && this.state.data.name}
-            <div className='card text-white mx-1 bg-primary h-100'>
-              <img
-                className='card-img-top'
-                src='https://via.placeholder.com/150'
-                alt='FoodItem'
-                style={{ width: '' }}
-              />
-              <div className='card-body'>
-                <h4 className='card-title'>Paneer Makhanwala</h4>
-                <p className='card-text'>Tasty</p>
-              </div>
-            </div>
+          <h1 className='text-center py-2'>
+            {voca.titleCase(this.state.foodItem)}
+          </h1>
+          <div className='d-flex justify-content-around'>
+            {this.state.data &&
+              this.state.data.map(res => (
+                <div
+                  className='card shadow border-0'
+                  style={{ height: '', width: '30vw' }}
+                >
+                  <img
+                    className='card-img-top'
+                    src='https://via.placeholder.com/125'
+                    alt='FoodItem'
+                    style={{ width: '', height: '40vh' }}
+                  />
+                  <div className='card-body'>
+                    <h2 className='card-title' style={{ fontFamily: 'serif' }}>
+                      {res.name}
+                    </h2>
+                    <p className='card-text'>
+                      <b>Location: </b>
+                      {res.location}
+                    </p>
+                    <p className='card-text'>
+                      <b>Contact: </b>
+                      {res.contact}
+                    </p>
+                    {res.menu
+                      .filter(
+                        menuItem =>
+                          menuItem.itemName.toUpperCase() ===
+                          this.state.foodItem
+                      )
+                      .map(menuItem => (
+                        <>
+                          <p>
+                            <b>Price: </b>Rs. {menuItem.price}
+                          </p>
+                          <p>
+                            <b>Description: </b>
+                            {voca.capitalize(menuItem.description)}
+                          </p>
+                        </>
+                      ))}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       );
